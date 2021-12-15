@@ -1,0 +1,22 @@
+let cl = console.log;
+
+const addMovieModalbtn = document.getElementById("addmovieModalbtn");
+const addModal = document.getElementById("add-modal");
+const backDrop = document.getElementById("backdrop");
+const myClose = Array.from(document.querySelectorAll(".myclose"))
+
+const toggleBackdrop = () =>{
+    backDrop.classList.toggle('visible')
+}
+
+const toggleMovieModal =() =>{
+    addModal.classList.toggle('visible')
+    toggleBackdrop()
+}
+
+
+addMovieModalbtn.addEventListener('click',toggleMovieModal);
+backDrop.addEventListener('click',toggleMovieModal);
+myClose.forEach((close)=>{
+    close.addEventListener('click',toggleMovieModal)
+})
